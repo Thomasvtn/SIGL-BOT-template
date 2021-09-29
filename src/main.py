@@ -41,6 +41,6 @@ async def xkcd(ctx):
 async def poll(ctx, *args):
     await commandsFile.create_poll(ctx, args)
 
-token = "ODkyODIyOTE0NTQwMzk2NjQ0.YVSgIg.9WQQ1Aefi6dRzyDZAp01axW5OFo"
+token = 00000
 bot.run(token)  # Starts the bot
 

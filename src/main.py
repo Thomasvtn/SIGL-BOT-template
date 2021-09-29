@@ -25,15 +25,18 @@ async def ping(ctx):
 async def name(ctx):
     await ctx.send(commandsFile.name(ctx))
 
+@bot.command()
+async def count(ctx):
+    await ctx.send(commandsFile.count(ctx, bot))
+
+@bot.command()
+async def admin(ctx, user):
+    await ctx.send(commandsFile.put_admin(ctx, user))
+
+@bot.command()
+async def xkcd(ctx):
+    await ctx.send(commandsFile.put_commic(ctx))
+
 token = "ODkyODIyOTE0NTQwMzk2NjQ0.YVSgIg.ZkDX0x4aCYuf3uAda5NReJBW0KI"
 bot.run(token)  # Starts the bot
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print('Logged on as {0}!'.format(self.user))
-
-    async def on_message(self, message):
-        print('Message from {0.author}: {0.content}'.format(message))
-
-client = MyClient()
-client.run('my token goes here')

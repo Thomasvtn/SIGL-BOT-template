@@ -30,5 +30,19 @@ def put_commic(ctx):
         url = "https://xkcd.com/" + str(rand)
         return url
         
+async def create_poll(ctx, args):
+        size = len(args)
+        
+        if (size <= 2):
+                return "Error poll must have a question and 2 answers"
+        question = args[0]
+        answer1 = args[1]
+        answer2 = args[2]
+
+        message = await ctx.send("New poll " + question + ": " + answer1 + " or " +  answer2)
+        await message.add_reaction(":thumbsup:")
+        await message.add_reaction(":thumbsdown:")
+
+        return "A toi de jouer"
 
         

@@ -37,6 +37,10 @@ async def admin(ctx, user):
 async def xkcd(ctx):
     await ctx.send(commandsFile.put_commic(ctx))
 
-token = "ODkyODIyOTE0NTQwMzk2NjQ0.YVSgIg.ZkDX0x4aCYuf3uAda5NReJBW0KI"
+@bot.command()
+async def poll(ctx, *args):
+    await commandsFile.create_poll(ctx, args)
+
+token = "ODkyODIyOTE0NTQwMzk2NjQ0.YVSgIg.9WQQ1Aefi6dRzyDZAp01axW5OFo"
 bot.run(token)  # Starts the bot
 
